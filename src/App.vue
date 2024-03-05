@@ -9,7 +9,7 @@ export default {
 
 <template>
   <Banner /> 
-  <ConteudoPrincipal/>
+  <ConteudoPrincipal />
 </template>
 
 <style scoped>
