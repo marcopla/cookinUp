@@ -1,5 +1,6 @@
 <script lang ="ts">
 import SelecionarIngredientes from './SelecionarIngredientes.vue';
+import Tag from './Tag.vue';
 
 export default{
     data() {
@@ -7,7 +8,7 @@ export default{
             ingredientes: ['Alho', 'Manteiga', 'Orégano']
         };
     },
-    components: { SelecionarIngredientes }
+    components: { SelecionarIngredientes, Tag }
 }
 </script>
 
@@ -18,7 +19,9 @@ export default{
         Sua lista: 
       </span>
       <ul v-if="ingredientes.length" class="ingredientes-sua-lista">
-        <li v-for="ingrediente in ingredientes" :key="ingrediente" class="ingrediente">{{ingrediente}}</li>
+        <li v-for="ingrediente in ingredientes" :key="ingrediente" class="ingrediente">
+          <Tag :texto="ingrediente" :ativa="true" />
+        </li>
       </ul>
       <p v-else class="paragrafo lista-vazia">
         <img src="../assets/imagens/images/icones/lista-vazia.svg" alt="icone de pesquisa">
